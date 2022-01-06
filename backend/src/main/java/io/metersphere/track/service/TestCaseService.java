@@ -1305,6 +1305,10 @@ public class TestCaseService {
                 if (StringUtils.equals(request.getCustomField().getName(), "用例等级")) {
                     testCase.setPriority((String) request.getCustomField().getValue());
                 }
+                //标签写入数据库表中
+                if (StringUtils.equals(request.getCustomField().getName(), "版本号")) {
+                    testCase.setTags( JSONArray.toJSONString(request.getCustomField().getValue()));
+                }
                 testCase.setCustomFields(JSONObject.toJSONString(fields));
                 testCase.setUpdateTime(System.currentTimeMillis());
                 TestCaseExample example = new TestCaseExample();

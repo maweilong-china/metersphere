@@ -15,7 +15,7 @@ function setDefaultValue(item, value) {
  * @param oldFields 用于兼容旧版本数据
  */
 export function parseCustomField(data, template, rules, oldFields) {
-  let hasOldData = false;
+  let hasOldData = true;
   if (!data.customFields) {
     // 旧数据
     hasOldData = true;
