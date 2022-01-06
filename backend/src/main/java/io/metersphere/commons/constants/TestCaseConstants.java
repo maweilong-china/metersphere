@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class TestCaseConstants {
 
-    public static final int MAX_NODE_DEPTH = 8;
+    public static final int MAX_NODE_DEPTH = 20;
 
     public enum Type {
         Functional("functional"), Performance("performance"), Aapi("api");
