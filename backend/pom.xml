@@ -297,6 +297,13 @@
             <groupId>com.google.guava</groupId>
             <version>31.0.1-jre</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
