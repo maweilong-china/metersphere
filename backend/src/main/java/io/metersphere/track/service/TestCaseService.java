@@ -1307,8 +1307,16 @@ public class TestCaseService {
                 }
                 //标签写入数据库表中
                 if (StringUtils.equals(request.getCustomField().getName(), "版本号")) {
-                    testCase.setTags( JSONArray.toJSONString(request.getCustomField().getValue()));
+
+                    if (request.getCustomField().getValue() instanceof String){
+                        String versionNum = (String)(request.getCustomField().getValue());
+                        versionNum = "[\"" + versionNum +"\"]";
+                        testCase.setTags(versionNum);
+                    } else {
+                        testCase.setTags( JSONArray.toJSONString(request.getCustomField().getValue()));
+                    }
                 }
+
                 testCase.setCustomFields(JSONObject.toJSONString(fields));
                 testCase.setUpdateTime(System.currentTimeMillis());
                 TestCaseExample example = new TestCaseExample();
